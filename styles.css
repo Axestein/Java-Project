@@ -116,7 +116,7 @@ body {
 
 /* Hero Section Styles */
 .hero {
-    background-color: #007bff;
+    background: url('Rectangle\ 34624769.png') no-repeat center center/cover;
     color: #fff;
     padding: 8rem 0;
     text-align: center;
@@ -150,6 +150,7 @@ body {
 /* Events Section Styles */
 .events {
     padding: 6rem 0;
+    margin: 10px 0; /* Reduced margin between sections */
     background-color: #f7f7f7;
 }
 
@@ -172,6 +173,12 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .event-title {
@@ -228,15 +235,33 @@ body {
 /* About Section Styles */
 .about {
     padding: 6rem 0;
-    background-color: #f7f7f7;
+    background: url('bg.png') no-repeat center center/cover; /* Add your image path here */
+    color: #fff; /* Adjust text color for readability */
     text-align: center;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adds a dark overlay to improve text readability */
+    z-index: 1;
+}
+
+.about .container {
+    position: relative;
+    z-index: 2;
 }
 
 .about-text {
     font-size: 1.25rem;
-    color: #666;
     max-width: 800px;
     margin: 0 auto;
+    color: #f0f0f0; /* Adjust text color */
 }
 
 /* Contact Section Styles */
@@ -366,4 +391,79 @@ body {
     .category-name {
         font-size: 0.9rem; /* Slightly smaller text on mobile */
     }
+}
+/* Create Event Promo Section Styles */
+.create-event-promo {
+    padding: 4rem 2rem;
+    background: url('bg2.png') no-repeat center center/cover; /* Add your image path */
+    text-align: center;
+    color: #fff;
+    position: relative;
+    margin-bottom: 2rem;
+    border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+.create-event-promo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+.create-event-promo .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.promo-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f0f0f0; /* Adjust as needed for readability */
+}
+
+.promo-description {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0; /* Adjust text color */
+}
+
+.btn-yellow {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #f7c842;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-yellow:hover {
+    background-color: #e6b832; /* Slightly darker yellow on hover */
+}
+/* Blue Button Styles */
+.btn-blue {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff; /* Blue color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
